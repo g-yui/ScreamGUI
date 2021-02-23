@@ -26,5 +26,5 @@ The github API may cause a crash for exceeding the allowed traffic for a given I
 - PyGitHub is under the LGPL-3.0 License
 
 # Acknlowledgments 
-Acidicoala for the invaluable help provided.
+Acidicoala for the invaluable help provided.<br />
 Icon designed by Freepik from Flaticon.
