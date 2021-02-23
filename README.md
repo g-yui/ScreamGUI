@@ -1,5 +1,5 @@
 # ScreamGUI
-A simple GUI to automatically copy [acidicoala's ScreamAPI](https://github.com/acidicoala/ScreamAPI) to a target game, written on Python.
+A simple GUI to automatically copy [acidicoala's ScreamAPI](https://github.com/acidicoala/ScreamAPI) to a target game, written on Python using Tkinter.
 
 # Features
 - Simple to use GUI with automatic .url, .exe, .dll and folder detection for easier usage.
