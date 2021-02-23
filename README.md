@@ -27,5 +27,4 @@ The github API may cause a crash for exceeding the allowed traffic for a given I
 
 # Acknlowledgments 
 Acidicoala for the invaluable help provided.
-
-Icon designed by Freepik from Flaticon 
+Icon designed by Freepik from Flaticon.
