@@ -4,8 +4,10 @@ A simple GUI to automatically copy acidicoala's ScreamAPI (https://github.com/ac
 # Features
 Simple .url, .exe, .dll and folder detection for easier usage.
 Can patch up to two instances of the EOSSDK dll, as there isn't a need for more, whether they are 32 or 64 bit. 
-Fetches latest release of the API via PyGitHub
+Fetches latest release of the API via PyGitHub.
 Clean installation, no unnecesary files will be left.
+Simple to use GUI.
+Automatic UAC prompt.
 
 # Known bugs
 The github API may cause a crash for exceeding the allowed traffic for a given IP.
