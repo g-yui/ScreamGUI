@@ -24,7 +24,6 @@ from ttkthemes import ThemedTk
 
 # Wget is under a Public Domain License #
 # TtkThemes has various licenses, these being  BSD-2-clause-like Tcl License, GNU GPLv2+ and GNU GPLv3. #
-# Material Icon used by the software licensed under the Apache License Version 2.0 #
 # The ScreamAPI itself is under a CC zero license #
 # BeautifulSoup is under the MIT license #
 # PyGitHub is under the LGPL-3.0 License #
