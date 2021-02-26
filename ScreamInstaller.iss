@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "ScreamGUI"
-#define MyAppVersion "1.2"
+#define MyAppVersion "1.1.1"
 #define MyAppPublisher "g-yui"
 #define MyAppURL "https://github.com/g-yui"
 #define MyAppExeName "ScreamGUI.exe"
