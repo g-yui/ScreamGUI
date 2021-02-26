@@ -1,0 +1,5 @@
+wget~=3.2
+beautifulsoup4~=4.9.3
+PyGithub~=1.54.1
+ttkthemes~=3.2.0
+setuptools~=53.0.0
