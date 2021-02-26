@@ -23,6 +23,7 @@ from github import RateLimitExceededException
 from ttkthemes import ThemedTk
 
 # Licenses #
+
 # Wget is under a Public Domain License #
 # TtkThemes has various licenses, these being  BSD-2-clause-like Tcl License, GNU GPLv2+ and GNU GPLv3. #
 # Material Icon used by the software licensed under the Apache License Version 2.0 #
@@ -30,11 +31,16 @@ from ttkthemes import ThemedTk
 # BeautifulSoup is under the MIT license #
 # PyGitHub is under the LGPL-3.0 License #
 # Icon designed by Freepik from Flaticon" #
+
+
 # Some Globals and definitions #
+
 global directory
 directory = False
+
 global executable
 executable = False
+
 global renamed_64
 global renamed_32
 global renamed_32_2
@@ -43,22 +49,32 @@ renamed_32 = None
 renamed_64 = None
 renamed_64_2 = None
 renamed_32_2 = None
+
 url_exe = None
+
 replaced = None
+
 EOS32_str = "EOSSDK-Win32-Shipping"
 EOS64_str = "EOSSDK-Win64-Shipping"
+
 filename_folder = None
 filename_game = None
+
 SixtyFour = None
 ThirtyTwo = None
+
 url = None
 dll = None
 exe = None
+
 global g_dir
 g_dir = None
 game_name = None
+
 architecture = None
+
 repository = "acidicoala/ScreamAPI"
+
 g = Github()
 
 
@@ -103,8 +119,12 @@ def ask_directory():
     rootkill()
     global directory
     directory = True
+
+
 # I'm not very happy with this way of resetting the program, as it is a rather bruteforce approach, #
 # but other options just wouldn't work for me, this may cause extra ram to be used, I hope it won't be a problem #
+
+
 def reset():
     rootkill()
     subprocess.call([sys.executable, os.path.realpath(__file__)])
@@ -161,34 +181,50 @@ def theme_ada():
     root.set_theme(theme_name='adapta')
     global Theme
     Theme = 'adapta'
+
+
 def theme_arc():
     root.set_theme(theme_name='arc')
     global Theme
     Theme = 'arc'
+
+
 def theme_black():
     root.set_theme(theme_name='black')
     global Theme
     Theme = 'black'
+
+
 def theme_bree():
     root.set_theme(theme_name='breeze')
     global Theme
     Theme = 'breeze'
+
+
 def theme_clear():
     root.set_theme(theme_name='clearlooks')
     global Theme
     Theme = 'clearlooks'
+
+
 def theme_equilux():
     root.set_theme(theme_name='equilux')
     global Theme
     Theme = 'equilux'
+
+
 def theme_plastik():
     root.set_theme(theme_name='plastik')
     global Theme
     Theme = 'plastik'
+
+
 def theme_yaru():
     root.set_theme(theme_name='yaru')
     global Theme
     Theme = 'yaru'
+
+
 def title():
     root.title('ScreamGUI')
 
@@ -199,16 +235,22 @@ def icon():
 
 # def icon():
 # root.iconbitmap('Placeholder.ico')
+
+
 # Defaults #
+
 global Theme
 Theme = 'Equilux'
+
 # Start of script #
+
 root = ThemedTk(theme=Theme)
 frame = tk.Frame(root)
 title()
 icon()
 
 # Menu #
+
 menu_bar = tk.Menu(root)
 
 theme_menu = tk.Menu(menu_bar, tearoff=0)
@@ -226,6 +268,7 @@ menu_bar.add_cascade(label="Themes", menu=theme_menu)
 root.config(menu=menu_bar)
 
 # Labels, Buttons and Definitions therein #
+
 text = tk.StringVar()
 text.set(
     'Welcome to the ScreamGUI, this program\'s purpose is to patch any game using the EOS SDK with the ScreamAPI '
@@ -245,6 +288,7 @@ def please_select():
     frame.pack()
 
     # Can't center the label for some god forsaken reason #
+
     exit_self.pack(padx=25, side=tk.LEFT)
     exe_select.pack(padx=25, side=tk.LEFT)
     root_select.pack(padx=25, side=tk.LEFT)
@@ -260,6 +304,7 @@ root.mainloop()
 
 
 # Check if not found #
+
 def not_found():
     tk.Tk().withdraw()
     tk.messagebox.showerror('Error', 'Something went wrong, please try again.')
@@ -298,8 +343,10 @@ elif executable:
         if not filename_folder and (directory is True or executable is True):
             not_found()
         # print('Exe problem') | this was used for debugging #
+
 # These two are fairly simple, one is to check the number of times the EOSSDK is found and the other sets up a #
 # dictionary, this will give me every path to the EOSSDK it can find in the architecture_check() #
+
 times = 0
 global d
 d = {}
@@ -326,6 +373,7 @@ def architecture_check():
         if "32" in str(arch):
             global ThirtyTwo
             ThirtyTwo = True
+
         elif str("EOSSDK") not in str(results):
             print('EOSSDK not found')
             tk.Tk().withdraw()
@@ -347,13 +395,17 @@ def arch_display():
         architecture = "32"
     else:
         architecture = None
+
+
 global patched
 patched = False
+
 n_of_patches = 0
 check_if_patched = list(Path(r"" + g_dir + "").rglob(r"EOSSDK-Win*-Shipping_o.dll"))
 for i in check_if_patched:
     patched = True
     n_of_patches = n_of_patches + 1
+
 if patched:
     tk.Tk().withdraw()
     tk.messagebox.showinfo('Patch Found',
@@ -370,6 +422,7 @@ frame = tk.Frame(root)
 frame.pack()
 
 # Why do I have to define this again is beyond me #
+
 menu_bar2 = tk.Menu(root)
 
 theme_menu = tk.Menu(menu_bar2, tearoff=0)
@@ -421,6 +474,7 @@ if executable:
         reset()
     arch_display()
     # My IDE may make the following text a mess, honestly don't know why it does that.#
+
     label = ttk.Label(frame, text="The game selected is " + '"' + str(game_name) + '"' + " and the detected EOSSDK "
                                                                                          "corresponds to a " + str(
         architecture) + " bit architecture, do you wish to proceed?")
@@ -483,6 +537,7 @@ dic_str_just_path_2 = dic_str_just_path_1_dot_1
 
 
 # Gets latest release with PyGitHub and downloads it using Wget, with some json and BS4 for decoding and reading #
+
 def download_file():
     try:
         asset_one = g.get_repo(repository).get_latest_release().get_assets()[0]
@@ -513,6 +568,8 @@ def download_file():
 
 
 # Use of temp_dir for temporary housing of the unzipped files and easier tracking of such #
+
+
 def unzip():
     with zipfile.ZipFile("ScreamAPI_Latest.zip", "r") as zip_ref:
         zip_ref.extractall(temp_dir.name)
@@ -522,6 +579,8 @@ def unzip():
 real_dir = ''
 real_dir2 = ''
 two_dirs = False
+
+
 def directory_check():
     # Works for now, with support for more than just the c:/ drive!!! #
     if str(",") in dic_str_just_path_2:
@@ -532,18 +591,21 @@ def directory_check():
         usable_drive = drive + "/"
         usable_drive_2 = drive_2 + "/"
         real_dir_index = dic_str_just_path_2.index(",")
-        real_dir = dic_str_just_path_2[real_dir_index:].replace(',', '').replace(' ' + usable_drive, usable_drive)
+        real_dir = dic_str_just_path_2[real_dir_index:].replace(',', '').strip()
         real_dir2_index = dic_str_just_path_2.index(",")
-        real_dir2 = dic_str_just_path_2[:real_dir2_index].replace(',', '').replace(' ' + usable_drive_2, usable_drive_2)
+        real_dir2 = dic_str_just_path_2[:real_dir2_index].replace(',', '').strip()
         global two_dirs
         two_dirs = True
+
     else:
         real_dir = dic_str_just_path_2
 
 # The name pretty much describes what this does, it renames the files and then copies. #
+
 def copy():
     global Fatal, renamed_32, renamed_64, renamed_32_2, renamed_64_2
     Fatal = False
+
     global eos_64
     global eos_32
     global scr_ini
@@ -551,11 +613,15 @@ def copy():
     eos_64 = str(temp_dir.name) + r"\EOSSDK-Win64-Shipping.dll"
     scr_ini = str(temp_dir.name) + r"\ScreamAPI.ini"
     eos_32 = str(temp_dir.name) + r"\EOSSDK-Win32-Shipping.dll"
+
     global self
     self = None
+
     global self2
     self2 = None
+
     # These two get the destination from the sauce ¬w¬ #
+
     def destiny():
         if EOS64_str in real_dir:
             global self
@@ -567,6 +633,7 @@ def copy():
         else:
             global Fatal
             Fatal = True
+
     def destiny2():
         if EOS64_str in real_dir2:
             global self2
@@ -578,10 +645,12 @@ def copy():
         else:
             global no_dir_2
             no_dir_2 = True
+
     destiny()
     destiny2()
 
     # Checks for self2 working as intended #
+
     if real_dir2 is None:
         print('No real_dir2 found')
     if self2 is None:
@@ -594,6 +663,7 @@ def copy():
         else:
             global no_dir_2
             no_dir_2 = True
+
     destination = str(self)
     destination2 = str(self2)
     global path_destination
@@ -601,6 +671,7 @@ def copy():
 
     path_destination = None
     path_destination2 = None
+
     if EOS32_str in destination:
         path_destination = str(self).replace('EOSSDK-Win32-Shipping_o.dll', '')
     elif EOS64_str in destination:
@@ -614,6 +685,7 @@ def copy():
     print('Path destinations: Path one is (' + str(path_destination) + "), and Path two is (" + str(path_destination2) +
           ")")
     # This checks if the variable real_dir 2 (i.e, there are two EOSSDK's) does exist #
+
     if str(real_dir2) != '' and not None:
         try:
             print("real_dir2 is not '' and is not None")
@@ -624,6 +696,7 @@ def copy():
                 renamed_32 = True
             elif EOS64_str in destination:
                 renamed_64 = True
+
             print("real is: " + real_dir)
             print("real2 is: " + real_dir2)
 
@@ -635,6 +708,7 @@ def copy():
                 renamed_32_2 = True
             elif str(EOS64_str) in str(destination2):
                 renamed_64_2 = True
+
             # Copying files #
             if renamed_32:
                 shutil.copy(eos_32, path_destination), shutil.copy(scr_ini, path_destination)
