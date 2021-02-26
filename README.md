@@ -5,7 +5,7 @@ A simple GUI to automatically copy [acidicoala's ScreamAPI](https://github.com/a
 - Simple to use GUI with automatic .url, .exe, .dll and folder detection for easier usage.
 - Can patch up to two instances of the EOSSDK dll, as there isn't a need for more, whether they are 32 or 64 bit. 
 - Fetches latest release of the API via PyGitHub.
-- Clean installation, no unnecesary files will be left.
+- Clean copies! No unnecesary files will be left.
 - Automatic UAC prompt.
 - Themes! Using the ttkthemes library.
 
