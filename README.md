@@ -15,9 +15,11 @@ A simple GUI to automatically copy [acidicoala's ScreamAPI](https://github.com/a
 - PyGitHub
 - Python 3
 
-# Known bugs
-- Relativelly long deployment time.
-- Infinite loop when 32 and 64 bit EOSSDK's are found (Reported by [acidicoala](https://github.com/acidicoala/))
+# Planned features
+- Multithreading
+- A loading bar
+- Removal of non essencial files from the dependencies, specially ttkthemes.
+- Remembering the selected theme
 
 # Licenses 
 - The ScreamAPI itself is under a CC zero license 
