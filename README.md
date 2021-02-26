@@ -17,6 +17,7 @@ A simple GUI to automatically copy [acidicoala's ScreamAPI](https://github.com/a
 
 # Known bugs
 - Relativelly long deployment time.
+- Infinite loop when 32 and 64 bit EOSSDK's are found (Reported by [acidicoala](https://github.com/acidicoala/))
 
 # Licenses 
 - The ScreamAPI itself is under a CC zero license 
