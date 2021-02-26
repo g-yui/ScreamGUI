@@ -16,8 +16,7 @@ A simple GUI to automatically copy [acidicoala's ScreamAPI](https://github.com/a
 - Python 3
 
 # Known bugs
-- The github API may cause a crash for exceeding the allowed traffic for a given IP. 
-- Drives other than c:/ are not currently supported.
+- Relativelly long deployment time.
 
 # Licenses 
 - The ScreamAPI itself is under a CC zero license 
