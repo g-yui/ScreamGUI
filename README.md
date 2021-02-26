@@ -15,6 +15,9 @@ A simple GUI to automatically copy [acidicoala's ScreamAPI](https://github.com/a
 - PyGitHub
 - Python 3
 
+# Known bugs
+- If not closed from the "Exit" button the application will persist, for some reason. :(
+
 # Planned features
 - Multithreading
 - A loading bar
