@@ -10,6 +10,7 @@ A simple GUI to automatically copy [acidicoala's ScreamAPI](https://github.com/a
 - Themes! Using the ttkthemes library.
 
 # Requirements
+- TtkThemes
 - Wget
 - BeautifulSoup
 - PyGitHub
