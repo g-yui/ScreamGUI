@@ -20,10 +20,7 @@ A simple GUI to automatically copy [acidicoala's ScreamAPI](https://github.com/a
 - If not closed from the "Exit" button the application will persist, for some reason. :(
 
 # Planned features
-- Multithreading
-- A loading bar
-- Removal of non essencial files from the dependencies, specially ttkthemes.
-- Remembering the selected theme
+- None, it has been archived for the time being.
 
 # Licenses 
 - The ScreamAPI itself is under a CC zero license 
